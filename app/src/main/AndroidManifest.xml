@@ -9,11 +9,11 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/XhsEmoticonsKeyboardTheme">
+        android:theme="@style/XEmoticonsKeyboardTheme">
         <activity
             android:name="github.ll.emoticon.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/XhsEmoticonsKeyboardTheme.NoTitle">
+            android:theme="@style/XEmoticonsKeyboardTheme.NoTitle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -22,24 +22,24 @@
 
         <activity
             android:name="github.ll.emoticon.activity.SimpleCommentActivity"
-            android:theme="@style/XhsEmoticonsKeyboardTheme.NoTitle" />
+            android:theme="@style/XEmoticonsKeyboardTheme.NoTitle" />
         <activity
             android:name="github.ll.emoticon.activity.SimpleChatActivity"
-            android:theme="@style/XhsEmoticonsKeyboardTheme.NoTitle" />
+            android:theme="@style/XEmoticonsKeyboardTheme.NoTitle" />
         <activity
             android:name="github.ll.emoticon.activity.PackUpdateChatActivity" />
         <activity
             android:name="github.ll.emoticon.activity.SimpleTranslucentChatActivity"
-            android:theme="@style/XhsEmoticonsKeyboardTheme.NoTitle" />
+            android:theme="@style/XEmoticonsKeyboardTheme.NoTitle" />
         <activity
             android:name="github.ll.emoticon.activity.SimpleChatCoordinatorLayoutActivity"
-            android:theme="@style/XhsEmoticonsKeyboardTheme.NoTitle" />
+            android:theme="@style/XEmoticonsKeyboardTheme.NoTitle" />
         <activity
             android:name="github.ll.emoticon.userdef.SimpleChatUserDefActivity"
-            android:theme="@style/XhsEmoticonsKeyboardTheme.NoTitle" />
+            android:theme="@style/XEmoticonsKeyboardTheme.NoTitle" />
         <activity
             android:name="github.ll.emoticon.qq.QqActivity"
-            android:theme="@style/XhsEmoticonsKeyboardTheme.NoTitle" />
+            android:theme="@style/XEmoticonsKeyboardTheme.NoTitle" />
     </application>
 
 </manifest>

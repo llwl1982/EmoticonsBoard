@@ -1,21 +1,21 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="XhsEmoticonsKeyboardTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="XEmoticonsKeyboardTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="XhsEmoticonsKeyboardTheme.NoTitle">
+    <style name="XEmoticonsKeyboardTheme.NoTitle">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="XhsEmoticonsKeyboardTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="XEmoticonsKeyboardTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="XhsEmoticonsKeyboardTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="XEmoticonsKeyboardTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="emotion_editview">
         <item name="android:layout_width">match_parent</item>

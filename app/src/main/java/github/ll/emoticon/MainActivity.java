@@ -97,10 +97,4 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btn_packs_update) void btn_packs_update() {
         startActivity(new Intent(MainActivity.this, PackUpdateChatActivity.class));
     }
-
-//    @OnClick(R.id.btn_github) void btn_github() {
-//        Uri uri = Uri.parse("http://github.com/w446108264/XhsEmoticonsKeyboard");
-//        Intent it = new Intent(Intent.ACTION_VIEW, uri);
-//        startActivity(it);
-//    }
 }

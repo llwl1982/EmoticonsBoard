@@ -47,7 +47,7 @@ object AdapterUtils {
     fun getEmoji(context: Context): EmoticonPack<Emoticon> {
         val emojiArray = mutableListOf<Emoticon>()
 
-        DefEmoticons.sEmojiArray.take(30).mapTo(emojiArray) {
+        DefEmoticons.sEmojiArray.take(25).mapTo(emojiArray) {
             val emoticon = Emoticon()
             emoticon.code = it.emoji
             emoticon.uri = context.getResourceUri(it.icon)

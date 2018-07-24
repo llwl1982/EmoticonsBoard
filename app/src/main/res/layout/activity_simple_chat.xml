@@ -14,14 +14,14 @@
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/XhsEmoticonsKeyboardTheme.AppBarOverlay">
+            android:theme="@style/XEmoticonsKeyboardTheme.AppBarOverlay">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"
-                app:popupTheme="@style/XhsEmoticonsKeyboardTheme.PopupOverlay" />
+                app:popupTheme="@style/XEmoticonsKeyboardTheme.PopupOverlay" />
 
         </android.support.design.widget.AppBarLayout>
 

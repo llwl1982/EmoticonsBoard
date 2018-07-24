@@ -57,6 +57,19 @@ class PackUpdateChatActivity : SimpleChatActivity(), FuncLayout.FuncKeyBoardList
                 adapter?.notifyDataSetChanged()
             }
 
+            deleteId -> {
+                if (!mEmojiPack.emoticons.isEmpty()) {
+                    mEmojiPack.emoticons.removeAt(mEmojiPack.emoticons.size - 1)
+                    mEmojiPack.isDataChanged = true
+                    adapter?.notifyDataSetChanged()
+                }
+            }
+
+            addPackId -> {
+                packs.add(AdapterUtils.getEmoji(this))
+                adapter?.notifyDataSetChanged()
+            }
+
             deletePackId -> {
                 if (!packs.isEmpty()) {
                     packs.removeAt(packs.size - 1)
