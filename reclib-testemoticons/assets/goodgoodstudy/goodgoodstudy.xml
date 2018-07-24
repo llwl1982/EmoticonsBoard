@@ -1,0 +1,89 @@
+<?xml version="1.0" standalone="yes"?>
+<EmoticonSet>
+    <name>goodgoodstudy</name>
+    <line>2</line>
+    <row>4</row>
+    <iconUri>1807377814855.gif</iconUri> 
+    <Emoticons>
+        <Emoticon>
+             
+            <iconUri>1807378345340.gif</iconUri> 
+            <content>我来了</content> 
+        </Emoticon> 
+        <Emoticon>
+             
+            <iconUri>1807374615328.gif</iconUri> 
+            <content>我先走了</content> 
+        </Emoticon> 
+        <Emoticon>
+             
+            <iconUri>1807357522113.gif</iconUri> 
+            <content>机智如我</content> 
+        </Emoticon> 
+        <Emoticon>
+             
+            <iconUri>1807377814855.gif</iconUri> 
+            <content>最近好吗</content> 
+        </Emoticon> 
+        <Emoticon>
+             
+            <iconUri>1807367933726.gif</iconUri>  
+            <content>多读书</content> 
+        </Emoticon> 
+        <Emoticon>
+             
+            <iconUri>1807368404775.gif</iconUri> 
+            <content>我爱读书</content> 
+        </Emoticon> 
+        <Emoticon>
+             
+            <iconUri>18073517513580.gif</iconUri> 
+            <content>出来聊天</content> 
+        </Emoticon> 
+        <Emoticon>
+             
+            <iconUri>1807351751358.gif</iconUri> 
+            <content>你没事吧</content> 
+        </Emoticon> 
+        <Emoticon>
+             
+            <iconUri>18073530369722.gif</iconUri> 
+            <content>点名了</content> 
+        </Emoticon> 
+        <Emoticon>
+             
+            <iconUri>1807354823352.gif</iconUri> 
+            <content>帮我签到</content> 
+        </Emoticon> 
+        <Emoticon>
+             
+            <iconUri>1807369690389.gif</iconUri> 
+            <content>求带饭</content> 
+        </Emoticon> 
+        <Emoticon>
+             
+            <iconUri>1807354038505.gif</iconUri> 
+            <content>闭嘴</content> 
+        </Emoticon> 
+        <Emoticon>
+            
+            <iconUri>1807353036972.gif</iconUri> 
+            <content>好想去玩</content> 
+        </Emoticon>  
+        <Emoticon>
+             
+            <iconUri>1807375587144.gif</iconUri> 
+            <content>宿管查房</content> 
+        </Emoticon> 
+        <Emoticon>
+             
+            <iconUri>1807364645046.gif</iconUri> 
+            <content>今夜无眠</content> 
+        </Emoticon> 
+        <Emoticon>
+             
+            <iconUri>1807375116095.gif</iconUri> 
+            <content>辛苦了</content> 
+        </Emoticon> 
+    </Emoticons>
+</EmoticonSet>
