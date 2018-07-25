@@ -40,7 +40,8 @@ open class DeleteBtnPageFactory<T: Emoticon>: GridPageFactory<T>() {
         return adapter
     }
 
-    inner class DeleteBtnAdapter<T: Emoticon>(context: Context, emoticons: List<T>, clickListener: OnEmoticonClickListener<Emoticon>?)
+    inner class DeleteBtnAdapter<T: Emoticon>(context: Context, emoticons: List<T>,
+                                              clickListener: OnEmoticonClickListener<Emoticon>?)
         : ImageAdapter<T>(context, emoticons, clickListener) {
         override fun getCount(): Int {
             return this@DeleteBtnPageFactory.line * row
@@ -73,14 +74,12 @@ open class DeleteBtnPageFactory<T: Emoticon>: GridPageFactory<T>() {
             }
         }
 
-        override fun bindView(position: Int, parent: ViewGroup, viewHolder: ViewHolder) {
-            super.bindView(position, parent, viewHolder)
+        override fun bindView(item: T, parent: ViewGroup, viewHolder: ViewHolder) {
+            super.bindView(item, parent, viewHolder)
 
-            val emojiBean = getItem(position)
+            viewHolder.rootLayout?.isClickable = item is PlaceHoldEmoticon
 
-            viewHolder.rootLayout?.isClickable = emojiBean is PlaceHoldEmoticon
-
-            if (emojiBean is PlaceHoldEmoticon) {
+            if (item is PlaceHoldEmoticon) {
                 viewHolder.rootLayout?.setBackgroundResource(0)
             }
         }

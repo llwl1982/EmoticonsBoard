@@ -55,17 +55,15 @@ open class TextGridAdapter<T: Emoticon>(context: Context,
         return inflater.inflate(R.layout.item_emoticon_text, null)
     }
 
-    override fun bindView(position: Int, parent: ViewGroup, viewHolder: ViewHolder) {
-
-        val emojiBean = getItem(position) as T
+    override fun bindView(item: T, parent: ViewGroup, viewHolder: ViewHolder) {
 
         viewHolder.rootLayout?.setBackgroundResource(github.ll.emotionboard.R.drawable.bg_emoticon)
 
-        viewHolder.content?.text = emojiBean.code
+        viewHolder.content?.text = item.code
 
 
         viewHolder.rootView?.setOnClickListener({
-            clickListener?.onEmoticonClick(emojiBean)
+            clickListener?.onEmoticonClick(item)
         })
     }
 

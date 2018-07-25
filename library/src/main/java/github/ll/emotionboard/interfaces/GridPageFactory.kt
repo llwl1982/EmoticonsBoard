@@ -64,7 +64,7 @@ abstract class GridAdapter<T: Emoticon, V>(val context: Context,
             viewHolder = convertTempView.tag as V
         }
 
-        bindView(position, parent, viewHolder)
+        bindView(getItem(position) as T, parent, viewHolder)
         setViewHolderLayoutParams(viewHolder, parent)
         return convertTempView
     }
@@ -79,7 +79,7 @@ abstract class GridAdapter<T: Emoticon, V>(val context: Context,
 
     override fun getCount() = emoticons.size
 
-    abstract fun bindView(position: Int, parent: ViewGroup, viewHolder: V)
+    abstract fun bindView(item: T, parent: ViewGroup, viewHolder: V)
 
     abstract fun setViewHolderLayoutParams(viewHolder: V, parent: ViewGroup)
 }
@@ -112,13 +112,11 @@ open class ImageAdapter<T: Emoticon>(context: Context,
         return inflater.inflate(R.layout.item_emoticon, null)
     }
 
-    override fun bindView(position: Int, parent: ViewGroup, viewHolder: ViewHolder) {
-
-        val emojiBean = getItem(position) as T
+    override fun bindView(item: T, parent: ViewGroup, viewHolder: ViewHolder) {
 
         viewHolder.rootLayout?.setBackgroundResource(R.drawable.bg_emoticon)
 
-        val uri = emojiBean.uri
+        val uri = item.uri
 
         val image = viewHolder.imageView
 
@@ -127,7 +125,7 @@ open class ImageAdapter<T: Emoticon>(context: Context,
         }
 
         viewHolder.rootView?.setOnClickListener({
-            clickListener?.onEmoticonClick(emojiBean)
+            clickListener?.onEmoticonClick(item)
         })
     }
 

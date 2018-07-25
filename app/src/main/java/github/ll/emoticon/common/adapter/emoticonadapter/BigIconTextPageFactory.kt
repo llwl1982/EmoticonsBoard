@@ -58,13 +58,11 @@ class BigIconTextEmoticonAdapter<T: Emoticon>(context: Context,
         return inflater.inflate(R.layout.item_emoticon_big, null)
     }
 
-    override fun bindView(position: Int, parent: ViewGroup, viewHolder: ViewHolder) {
-
-        val emojiBean= getItem(position) as T
+    override fun bindView(item: T, parent: ViewGroup, viewHolder: ViewHolder) {
 
         viewHolder.rootLayout?.setBackgroundResource(github.ll.emotionboard.R.drawable.bg_emoticon)
 
-        val uri = emojiBean.uri
+        val uri = item.uri
 
         val image = viewHolder.imageView
 
@@ -72,10 +70,10 @@ class BigIconTextEmoticonAdapter<T: Emoticon>(context: Context,
             ImageLoader.displayImage(uri, image)
         }
 
-        viewHolder.code?.text = emojiBean.code
+        viewHolder.code?.text = item.code
 
         viewHolder.rootView?.setOnClickListener({
-            clickListener?.onEmoticonClick(emojiBean)
+            clickListener?.onEmoticonClick(item)
         })
     }
 

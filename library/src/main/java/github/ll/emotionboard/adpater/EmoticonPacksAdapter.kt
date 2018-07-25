@@ -16,6 +16,8 @@ open class EmoticonPacksAdapter(val packList: List<EmoticonPack<out Emoticon>>):
 
     var clickListener: OnEmoticonClickListener<Emoticon>? = null
     var adapterListener: EmoticonPacksAdapterListener? = null
+    private var oldCount = -1
+    private var isUpdateAll = false
 
     fun getEmoticonPackPosition(pack: EmoticonPack<out Emoticon>): Int {
         var startPosition = 0
@@ -38,6 +40,12 @@ open class EmoticonPacksAdapter(val packList: List<EmoticonPack<out Emoticon>>):
             count += it.pageCount
         }
 
+        if (oldCount != -1) {
+            isUpdateAll = oldCount != count
+        }
+
+        oldCount = count
+
         return count
     }
 
@@ -59,6 +67,8 @@ open class EmoticonPacksAdapter(val packList: List<EmoticonPack<out Emoticon>>):
         container.addView(view)
 
         pack?.isDataChanged = false
+
+        isUpdateAll = false
 
         return view
     }
@@ -86,7 +96,12 @@ open class EmoticonPacksAdapter(val packList: List<EmoticonPack<out Emoticon>>):
         return view == obj
     }
 
+
     override fun getItemPosition(obj: Any?): Int {
+
+        if (isUpdateAll) {
+            return POSITION_NONE
+        }
 
         if (packList.isEmpty()) {
             return POSITION_NONE
@@ -96,11 +111,11 @@ open class EmoticonPacksAdapter(val packList: List<EmoticonPack<out Emoticon>>):
             val pack = getEmotionPack(obj.tag as Int)
 
             if (pack != null && pack.isDataChanged) {
-                return PagerAdapter.POSITION_NONE
+                return POSITION_NONE
             }
         }
 
-        return PagerAdapter.POSITION_UNCHANGED
+        return POSITION_UNCHANGED
     }
 
     override fun notifyDataSetChanged() {

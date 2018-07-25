@@ -91,8 +91,8 @@ class PackUpdateChatActivity : SimpleChatActivity(), FuncLayout.FuncKeyBoardList
 
         packs.add(mEmojiPack)
         packs.add(AdapterUtils.getXhsPageSetEntity(this))
-        packs.add(AdapterUtils.getGoodGoodStudyPageSetEntity(this))
-        packs.add(AdapterUtils.getKaomojiPageSetEntity(this))
+    //    packs.add(AdapterUtils.getGoodGoodStudyPageSetEntity(this))
+    //    packs.add(AdapterUtils.getKaomojiPageSetEntity(this))
 
         adapter = EmoticonPacksAdapter(packs)
         adapter?.clickListener = onEmoticonClickListener

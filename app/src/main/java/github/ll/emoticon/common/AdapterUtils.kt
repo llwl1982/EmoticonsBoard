@@ -16,6 +16,7 @@ import github.ll.emoticon.common.data.PlaceHoldEmoticon
 import github.ll.emotionboard.adpater.EmoticonPacksAdapter
 import github.ll.emotionboard.data.Emoticon
 import github.ll.emotionboard.data.EmoticonPack
+import github.ll.emotionboard.interfaces.GridPageFactory
 import github.ll.emotionboard.interfaces.OnEmoticonClickListener
 import github.ll.emotionboard.utils.getResourceUri
 import org.xmlpull.v1.XmlPullParser
@@ -47,7 +48,7 @@ object AdapterUtils {
     fun getEmoji(context: Context): EmoticonPack<Emoticon> {
         val emojiArray = mutableListOf<Emoticon>()
 
-        DefEmoticons.sEmojiArray.take(25).mapTo(emojiArray) {
+        DefEmoticons.sEmojiArray.take(21).mapTo(emojiArray) {
             val emoticon = Emoticon()
             emoticon.code = it.emoji
             emoticon.uri = context.getResourceUri(it.icon)
@@ -71,13 +72,13 @@ object AdapterUtils {
 
     fun getXhsPageSetEntity(context: Context): EmoticonPack<Emoticon> {
         val pack = EmoticonPack<Emoticon>()
-        pack.emoticons = parseXhsData(DefXhsEmoticons.xhsEmoticonArray)
+        pack.emoticons = parseXhsData(DefXhsEmoticons.xhsEmoticonArray).subList(0, 10)
 
         pack.iconUri = "file:///android_asset/xhsemoji_19.png"
 
-        val factory = DeleteBtnPageFactory<Emoticon>()
-        factory.deleteBtnStatus = DeleteBtnPageFactory.ButtonStatus.FOLLOW
-        factory.deleteIconUri = context.getResourceUri(R.mipmap.icon_del)
+        val factory = GridPageFactory<Emoticon>()
+   //     factory.deleteBtnStatus = DeleteBtnPageFactory.ButtonStatus.FOLLOW
+   //     factory.deleteIconUri = context.getResourceUri(R.mipmap.icon_del)
         factory.line = 3
         factory.row = 7
 

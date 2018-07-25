@@ -34,10 +34,8 @@ class AppAdapter<T: Emoticon>(context: Context, emoticons: List<T>, clickListene
         return inflater.inflate(R.layout.item_app, null)
     }
 
-    override fun bindView(position: Int, parent: ViewGroup, viewHolder: ViewHolder) {
-        val emojiBean = getItem(position) as T
-
-        val uri = emojiBean.uri
+    override fun bindView(item: T, parent: ViewGroup, viewHolder: ViewHolder) {
+        val uri = item.uri
 
         val image = viewHolder.imageView
 
@@ -46,7 +44,7 @@ class AppAdapter<T: Emoticon>(context: Context, emoticons: List<T>, clickListene
         }
 
         viewHolder.rootView?.setOnClickListener({
-            clickListener?.onEmoticonClick(emojiBean)
+            clickListener?.onEmoticonClick(item)
         })
     }
 
