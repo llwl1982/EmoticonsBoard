@@ -41,7 +41,7 @@ open class EmoticonPacksAdapter(val packList: List<EmoticonPack<out Emoticon>>):
         }
 
         if (oldCount != -1) {
-            isUpdateAll = oldCount != count
+            isUpdateAll = count < oldCount
         }
 
         oldCount = count

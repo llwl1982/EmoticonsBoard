@@ -124,10 +124,6 @@ open class EmotionsTabBar(context: Context, attrs: AttributeSet?) : LinearLayout
         override fun createAdapter(packs: List<EmoticonPack<out Emoticon>>): RecyclerView.Adapter<out EmotionPackTabAdapter.ViewHolder> {
             packList = packs
 
-            packList.forEach {
-                it.tag = false
-            }
-
             val adapter = getAdapter(packList)
             adapter.itemClickListeners = itemClickListeners
 
@@ -155,6 +151,12 @@ open class EmotionPackTabAdapter(val packs: List<EmoticonPack<out Emoticon>>)
 
     var itemClickListeners: OnToolBarItemClickListener? = null
 
+    init {
+        packs.forEach {
+            it.tag = false
+        }
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.left_toolbtn, parent, false)
 
@@ -169,6 +171,11 @@ open class EmotionPackTabAdapter(val packs: List<EmoticonPack<out Emoticon>>)
         val context = holder.icon.context
 
         ImageLoader.displayImage(packs[position].iconUri!!, holder.icon)
+
+        if (packs[position].tag == null) {
+            // this data is not form set constructor
+            packs[position].tag = false
+        }
 
         if (packs[position].tag as Boolean) {
             holder.rootView.setBackgroundColor(context.resources.getColor(R.color.toolbar_btn_select))
