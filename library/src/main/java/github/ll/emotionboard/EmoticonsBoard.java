@@ -31,7 +31,7 @@ import github.ll.emotionboard.widget.EmoticonsFuncView;
 import github.ll.emotionboard.widget.EmoticonsIndicatorView;
 import github.ll.emotionboard.widget.FuncLayout;
 
-public class XEmoticonsKeyBoard extends AutoHeightLayout implements View.OnClickListener, EmoticonsFuncView.EmoticonsFuncListener, OnToolBarItemClickListener, EmoticonsEditText.OnBackKeyClickListener, FuncLayout.OnFuncChangeListener {
+public class EmoticonsBoard extends AutoHeightLayout implements View.OnClickListener, EmoticonsFuncView.EmoticonsFuncListener, OnToolBarItemClickListener, EmoticonsEditText.OnBackKeyClickListener, FuncLayout.OnFuncChangeListener {
 
     public static final int FUNC_TYPE_EMOTION = -1;
     public static final int FUNC_TYPE_APPPS = -2;
@@ -52,7 +52,7 @@ public class XEmoticonsKeyBoard extends AutoHeightLayout implements View.OnClick
 
     protected boolean dispatchKeyEventPreImeLock = false;
 
-    public XEmoticonsKeyBoard(Context context, AttributeSet attrs) {
+    public EmoticonsBoard(Context context, AttributeSet attrs) {
         super(context, attrs);
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflateKeyboardBar();

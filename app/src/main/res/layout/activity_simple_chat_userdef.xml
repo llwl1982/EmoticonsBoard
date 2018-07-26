@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<github.ll.emoticon.userdef.SimpleUserEmoticonsKeyBoard xmlns:android="http://schemas.android.com/apk/res/android"
+<github.ll.emoticon.userdef.SimpleUserEmoticonsBoard xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/ek_bar"
     android:layout_width="match_parent"
@@ -40,5 +40,5 @@
             android:stackFromBottom="true" />
     </LinearLayout>
 
-</github.ll.emoticon.userdef.SimpleUserEmoticonsKeyBoard>
+</github.ll.emoticon.userdef.SimpleUserEmoticonsBoard>
 

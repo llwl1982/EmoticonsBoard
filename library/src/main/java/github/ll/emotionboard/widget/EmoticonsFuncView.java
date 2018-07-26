@@ -66,6 +66,7 @@ public class EmoticonsFuncView extends ViewPager {
     }
 
     private void checkPageChange(int position) {
+        Log.d(TAG, "checkPageChange");
         if (mAdapter == null) {
             return;
         }

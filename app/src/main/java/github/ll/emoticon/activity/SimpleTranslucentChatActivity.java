@@ -26,7 +26,7 @@ import github.ll.emoticon.common.data.BigEmoticon;
 import github.ll.emoticon.common.data.ImMsgBean;
 import github.ll.emoticon.common.data.PlaceHoldEmoticon;
 import github.ll.emoticon.common.widget.SimpleAppsGridView;
-import github.ll.emotionboard.XEmoticonsKeyBoard;
+import github.ll.emotionboard.EmoticonsBoard;
 import github.ll.emotionboard.data.Emoticon;
 import github.ll.emotionboard.interfaces.OnEmoticonClickListener;
 import github.ll.emotionboard.utils.EmoticonsKeyboardUtils;
@@ -41,7 +41,7 @@ public class SimpleTranslucentChatActivity extends AppCompatActivity implements 
     @Bind(R.id.toolbar) Toolbar toolbar;
     @Bind(R.id.lv_chat) ListView lvChat;
     @Bind(R.id.ek_bar)
-    XEmoticonsKeyBoard ekBar;
+    EmoticonsBoard ekBar;
 
     private ChattingListAdapter chattingListAdapter;
 

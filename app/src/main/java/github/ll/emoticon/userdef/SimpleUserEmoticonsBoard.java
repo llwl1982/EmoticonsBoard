@@ -5,14 +5,14 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import github.ll.emoticon.R;
-import github.ll.emotionboard.XEmoticonsKeyBoard;
+import github.ll.emotionboard.EmoticonsBoard;
 import github.ll.emotionboard.utils.EmoticonsKeyboardUtils;
 
-public class SimpleUserEmoticonsKeyBoard extends XEmoticonsKeyBoard {
+public class SimpleUserEmoticonsBoard extends EmoticonsBoard {
 
     public final int APPS_HEIGHT = 120;
 
-    public SimpleUserEmoticonsKeyBoard(Context context, AttributeSet attrs) {
+    public SimpleUserEmoticonsBoard(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 

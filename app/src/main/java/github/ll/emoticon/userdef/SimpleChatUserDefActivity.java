@@ -35,7 +35,7 @@ public class SimpleChatUserDefActivity extends AppCompatActivity implements Func
     @Bind(R.id.toolbar) Toolbar toolbar;
     @Bind(R.id.lv_chat) ListView lvChat;
     @Bind(R.id.ek_bar)
-    SimpleUserEmoticonsKeyBoard ekBar;
+    SimpleUserEmoticonsBoard ekBar;
 
     private ChattingListAdapter chattingListAdapter;
 

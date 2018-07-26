@@ -31,7 +31,7 @@ import github.ll.emoticon.common.data.BigEmoticon;
 import github.ll.emoticon.common.data.ImMsgBean;
 import github.ll.emoticon.common.data.PlaceHoldEmoticon;
 import github.ll.emoticon.common.widget.SimpleAppsGridView;
-import github.ll.emotionboard.XEmoticonsKeyBoard;
+import github.ll.emotionboard.EmoticonsBoard;
 import github.ll.emotionboard.adpater.EmoticonPacksAdapter;
 import github.ll.emotionboard.data.Emoticon;
 import github.ll.emotionboard.interfaces.OnEmoticonClickListener;
@@ -46,7 +46,7 @@ public class SimpleChatActivity extends AppCompatActivity implements FuncLayout.
     @Bind(R.id.lv_chat)
     ListView lvChat;
     @Bind(R.id.ek_bar)
-    XEmoticonsKeyBoard ekBar;
+    EmoticonsBoard ekBar;
 
     private ChattingListAdapter chattingListAdapter;
     private EmoticonPacksAdapter adapter;

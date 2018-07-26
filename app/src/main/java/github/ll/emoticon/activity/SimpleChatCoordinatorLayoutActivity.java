@@ -21,7 +21,7 @@ import github.ll.emoticon.common.adapter.ChattingListAdapter;
 import github.ll.emoticon.common.data.ImMsgBean;
 import github.ll.emoticon.common.widget.AutoHeightBehavior;
 import github.ll.emoticon.common.widget.SimpleAppsGridView;
-import github.ll.emotionboard.XEmoticonsKeyBoard;
+import github.ll.emotionboard.EmoticonsBoard;
 import github.ll.emotionboard.widget.AutoHeightLayout;
 import github.ll.emotionboard.widget.FuncLayout;
 
@@ -32,7 +32,7 @@ public class SimpleChatCoordinatorLayoutActivity extends AppCompatActivity imple
     @Bind(R.id.lv_chat)
     ListView lvChat;
     @Bind(R.id.ek_bar)
-    XEmoticonsKeyBoard ekBar;
+    EmoticonsBoard ekBar;
 
     private ChattingListAdapter chattingListAdapter;
 

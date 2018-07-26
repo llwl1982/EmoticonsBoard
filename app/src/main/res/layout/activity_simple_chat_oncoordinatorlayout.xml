@@ -20,7 +20,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <github.ll.emotionboard.XEmoticonsKeyBoard
+    <github.ll.emotionboard.EmoticonsBoard
         android:id="@+id/ek_bar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -41,6 +41,6 @@
             android:smoothScrollbar="true"
             android:stackFromBottom="true" />
 
-    </github.ll.emotionboard.XEmoticonsKeyBoard>
+    </github.ll.emotionboard.EmoticonsBoard>
 
 </android.support.design.widget.CoordinatorLayout>

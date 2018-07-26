@@ -6,7 +6,7 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <github.ll.emotionboard.XEmoticonsKeyBoard
+    <github.ll.emotionboard.EmoticonsBoard
         android:id="@+id/ek_bar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -46,7 +46,7 @@
                 android:stackFromBottom="true" />
         </LinearLayout>
 
-    </github.ll.emotionboard.XEmoticonsKeyBoard>
+    </github.ll.emotionboard.EmoticonsBoard>
 
 </FrameLayout>
 
