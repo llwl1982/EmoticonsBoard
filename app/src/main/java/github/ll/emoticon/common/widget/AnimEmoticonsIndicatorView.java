@@ -48,7 +48,7 @@ public class AnimEmoticonsIndicatorView extends EmoticonsIndicatorView {
     }
 
     @Override
-    public void playBy(int startPosition, int nextPosition, EmoticonPack pack) {
+    public void playBy(int startPosition, int toPosition, EmoticonPack pack) {
         if (!checkPack(pack)) {
             return;
         }
@@ -56,17 +56,17 @@ public class AnimEmoticonsIndicatorView extends EmoticonsIndicatorView {
         updateIndicatorCount(pack.getPageCount());
 
         boolean isShowInAnimOnly = false;
-        if (startPosition < 0 || nextPosition < 0 || nextPosition == startPosition) {
-            startPosition = nextPosition = 0;
+        if (startPosition < 0 || toPosition < 0 || toPosition == startPosition) {
+            startPosition = toPosition = 0;
         }
 
         if (startPosition < 0) {
             isShowInAnimOnly = true;
-            startPosition = nextPosition = 0;
+            startPosition = toPosition = 0;
         }
 
         final ImageView imageViewStrat = mImageViews.get(startPosition);
-        final ImageView imageViewNext = mImageViews.get(nextPosition);
+        final ImageView imageViewNext = mImageViews.get(toPosition);
 
         ObjectAnimator anim1 = ObjectAnimator.ofFloat(imageViewStrat, "scaleX", 1.0f, 0.25f);
         ObjectAnimator anim2 = ObjectAnimator.ofFloat(imageViewStrat, "scaleY", 1.0f, 0.25f);

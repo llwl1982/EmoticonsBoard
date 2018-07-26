@@ -71,25 +71,25 @@ public class EmoticonsIndicatorView extends LinearLayout implements github.ll.em
     }
 
     @Override
-    public void playBy(int startPosition, int nextPosition, EmoticonPack<?> pack) {
+    public void playBy(int startPosition, int toPosition, EmoticonPack<?> pack) {
         if (!checkPack(pack)) {
             return;
         }
 
         updateIndicatorCount(pack.getPageCount());
 
-        if (startPosition < 0 || nextPosition < 0 || nextPosition == startPosition) {
-            startPosition = nextPosition = 0;
+        if (startPosition < 0 || toPosition < 0 || toPosition == startPosition) {
+            startPosition = toPosition = 0;
         }
 
         if (startPosition < 0) {
-            startPosition = nextPosition = 0;
+            startPosition = toPosition = 0;
         }
 
-        mCurrentPosition = nextPosition;
+        mCurrentPosition = toPosition;
 
         final ImageView imageViewStart = mImageViews.get(startPosition);
-        final ImageView imageViewNext = mImageViews.get(nextPosition);
+        final ImageView imageViewNext = mImageViews.get(toPosition);
 
         imageViewStart.setImageDrawable(mDrawableNormal);
         imageViewNext.setImageDrawable(mDrawableSelect);

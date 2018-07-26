@@ -161,7 +161,7 @@ public class XEmoticonsKeyBoard extends AutoHeightLayout implements View.OnClick
     public void reset() {
         EmoticonsKeyboardUtils.closeSoftKeyboard(this);
         funcLayout.hideAllFuncView();
-        btnFace.setImageResource(R.drawable.icon_face_nomal);
+        btnFace.setImageResource(R.drawable.icon_face_normal);
     }
 
     protected void showVoice() {
@@ -193,7 +193,7 @@ public class XEmoticonsKeyBoard extends AutoHeightLayout implements View.OnClick
         if (FUNC_TYPE_EMOTION == key) {
             btnFace.setImageResource(R.drawable.icon_face_pop);
         } else {
-            btnFace.setImageResource(R.drawable.icon_face_nomal);
+            btnFace.setImageResource(R.drawable.icon_face_normal);
         }
         checkVoice();
     }

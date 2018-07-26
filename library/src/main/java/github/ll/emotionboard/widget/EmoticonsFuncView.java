@@ -3,6 +3,7 @@ package github.ll.emotionboard.widget;
 import android.content.Context;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
+import android.util.Log;
 
 import github.ll.emotionboard.adpater.EmoticonPacksAdapter;
 import github.ll.emotionboard.data.Emoticon;
@@ -10,6 +11,8 @@ import github.ll.emotionboard.data.EmoticonPack;
 
 
 public class EmoticonsFuncView extends ViewPager {
+
+    private static final String TAG = "EmoticonsFuncView";
 
     protected EmoticonPacksAdapter mAdapter;
     protected int mCurrentPagePosition;
@@ -26,12 +29,17 @@ public class EmoticonsFuncView extends ViewPager {
         addOnPageChangeListener(new OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                Log.d(TAG, "onPageScrolled position:" + position + " positionOffset:" + positionOffset);
+                if (Math.abs(positionOffset) < 0.000001) {
+                    checkPageChange(position);
+                    mCurrentPagePosition = position;
+                }
             }
 
             @Override
             public void onPageSelected(int position) {
-                checkPageChange(position);
-                mCurrentPagePosition = position;
+                Log.d(TAG, "onPageSelected position:" + position);
+
             }
 
             @Override
@@ -61,40 +69,45 @@ public class EmoticonsFuncView extends ViewPager {
         if (mAdapter == null) {
             return;
         }
-        int end = 0;
+        int start = 0;
         for (EmoticonPack<?> pack : mAdapter.getPackList()) {
 
             int size = pack.getPageCount();
 
-            if (end + size > position) {
+            int end = start + size - 1;
 
-                boolean isEmoticonSetChanged = true;
-                // 上一表情集
-                if (mCurrentPagePosition - end >= size) {
-                    if (mEmoticonsFuncListener != null) {
-                        mEmoticonsFuncListener.playTo(position - end, pack);
-                    }
-                }
-                // 下一表情集
-                else if (mCurrentPagePosition - end < 0) {
-                    if (mEmoticonsFuncListener != null) {
-                        mEmoticonsFuncListener.playTo(0, pack);
-                    }
-                }
-                // 当前表情集
-                else {
-                    if (mEmoticonsFuncListener != null) {
-                        mEmoticonsFuncListener.playBy(mCurrentPagePosition - end, position - end, pack);
-                    }
-                    isEmoticonSetChanged = false;
+            if (position <= end) {
+
+                if (mEmoticonsFuncListener != null) {
+                    mEmoticonsFuncListener.playTo(position - start, pack);
                 }
 
-                if (isEmoticonSetChanged && mEmoticonsFuncListener != null) {
+//                if (mCurrentPagePosition - start >= size) {
+//                    if (mEmoticonsFuncListener != null) {
+//                        mEmoticonsFuncListener.playTo(position - start, pack);
+//                    }
+//                }
+//
+//                else if (mCurrentPagePosition - start < 0) {
+//                    if (mEmoticonsFuncListener != null) {
+//                        mEmoticonsFuncListener.playTo(0, pack);
+//                    }
+//                }
+//
+//                // 当前表情集
+//                else {
+//                    if (mEmoticonsFuncListener != null) {
+//                        mEmoticonsFuncListener.playBy(mCurrentPagePosition - start, position - start, pack);
+//                    }
+//                }
+
+                if (mEmoticonsFuncListener != null) {
                     mEmoticonsFuncListener.onCurrentEmoticonPackChanged(pack);
                 }
+
                 return;
             }
-            end += size;
+            start += size;
         }
     }
 
