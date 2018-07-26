@@ -16,6 +16,6 @@
 
 ext {
     libraries = [
-            "emoticonkeyboard": project(':library')
+            "emoticonsboard": project(':library')
     ]
 }

@@ -25,9 +25,9 @@ class EmoticonPack<T: Emoticon> {
             throw RuntimeException("must set emoticons and pageFactory first")
         }
 
-        var count = emoticons!!.size / pageFactory!!.emoticonsCapacity()
+        var count = emoticons.size / pageFactory.emoticonsCapacity()
 
-        if (emoticons!!.size % pageFactory!!.emoticonsCapacity() > 0) {
+        if (emoticons.size % pageFactory.emoticonsCapacity() > 0) {
             count++
         }
 
@@ -36,7 +36,7 @@ class EmoticonPack<T: Emoticon> {
 
 
     fun getView(context: Context, pageIndex: Int, listener: OnEmoticonClickListener<Emoticon>?): View {
-        return pageFactory?.create(context, getEmoticons(pageIndex), listener)
+        return pageFactory.create(context, getEmoticons(pageIndex), listener)
     }
 
     private fun getEmoticons(pageIndex: Int): List<T> {
