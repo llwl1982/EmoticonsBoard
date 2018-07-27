@@ -35,7 +35,7 @@ object AdapterUtils {
         val packs = mutableListOf<EmoticonPack<out Emoticon>>()
 
         packs.add(getEmoji(context))
-        packs.add(getXhsPageSetEntity(context))
+        packs.add(getXhsPageSetEntity())
         packs.add(getGoodGoodStudyPageSetEntity(context))
         packs.add(getKaomojiPageSetEntity(context))
 
@@ -70,9 +70,9 @@ object AdapterUtils {
         return pack
     }
 
-    fun getXhsPageSetEntity(context: Context): EmoticonPack<Emoticon> {
+    fun getXhsPageSetEntity(): EmoticonPack<Emoticon> {
         val pack = EmoticonPack<Emoticon>()
-        pack.emoticons = parseXhsData(DefXhsEmoticons.xhsEmoticonArray).subList(0, 10)
+        pack.emoticons = parseXhsData(DefXhsEmoticons.xhsEmoticonArray)
 
         pack.iconUri = "file:///android_asset/xhsemoji_19.png"
 
@@ -90,7 +90,7 @@ object AdapterUtils {
     fun getGoodGoodStudyPageSetEntity(context: Context): EmoticonPack<Emoticon> {
 
         val xmlName = "goodgoodstudy/goodgoodstudy.xml"
-        val inStream = context.getResources().getAssets().open(xmlName)
+        val inStream = context.resources.assets.open(xmlName)
 
         return parserXml("file:///android_asset/goodgoodstudy", inStream)
     }
