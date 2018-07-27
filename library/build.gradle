@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.novoda.bintray-release'
 
 group='im.ll'
 
@@ -19,6 +19,17 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     compile 'com.android.support:recyclerview-v7:23.1.1'
 }
+
 repositories {
     mavenCentral()
+}
+
+
+publish {
+    userOrg = 'llwl1982'
+    groupId = 'im.ll'
+    artifactId = 'emoticonsboard'
+    publishVersion = '1.0.0'
+    desc = 'emotions board, can update emotions use EmoticonPacksAdapter'
+    website = 'https://github.com'
 }
