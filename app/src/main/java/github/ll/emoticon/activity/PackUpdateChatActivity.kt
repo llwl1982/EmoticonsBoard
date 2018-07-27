@@ -90,7 +90,7 @@ class PackUpdateChatActivity : SimpleChatActivity(), FuncLayout.FuncKeyBoardList
         mEmojiPack = AdapterUtils.getEmoji(this)
 
         packs.add(mEmojiPack)
-        packs.add(AdapterUtils.getXhsPageSetEntity(this))
+        packs.add(AdapterUtils.getXhsPageSetEntity())
     //    packs.add(AdapterUtils.getGoodGoodStudyPageSetEntity(this))
     //    packs.add(AdapterUtils.getKaomojiPageSetEntity(this))
 

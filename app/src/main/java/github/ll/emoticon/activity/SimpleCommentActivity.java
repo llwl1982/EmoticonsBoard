@@ -50,7 +50,7 @@ public class SimpleCommentActivity extends AppCompatActivity {
 
         List<EmoticonPack<Emoticon>> packs = new ArrayList<>();
         packs.add(AdapterUtils.INSTANCE.getEmoji(this));
-        packs.add(AdapterUtils.INSTANCE.getXhsPageSetEntity(this));
+        packs.add(AdapterUtils.INSTANCE.getXhsPageSetEntity());
 
         EmoticonPacksAdapter adapter = new EmoticonPacksAdapter(packs);
         adapter.setClickListener(AdapterUtils.INSTANCE.getCommonEmoticonClickListener(etContent));
