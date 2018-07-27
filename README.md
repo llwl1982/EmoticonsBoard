@@ -1,6 +1,21 @@
 # EmoticonsBoard
 基于XhsEmoticonsKeyboard，添加了动态更新表情包的功能。使用EmoticonPacksAdapter，可以轻松的增减表情。
-maven仓库正在上传中，敬请期待
+# Gradle Dependency
+
+```xml  
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+```
+and:
+
+```xml
+dependencies { 
+    compile 'im.ll:emoticonsboard:1.0.0'
+}
+```
 # Samples Usage
 ## XML
 
