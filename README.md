@@ -63,6 +63,8 @@ For details refer to the demo source
 
 ## Update data
 
+![Art](https://github.com/llwl1982/EmoticonsBoard/blob/master/doc/change_data.gif)
+
 Kotlin code:
 
 ```
