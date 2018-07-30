@@ -1,5 +1,8 @@
 # EmoticonsBoard
 基于XhsEmoticonsKeyboard，添加了动态更新表情包的功能。使用EmoticonPacksAdapter，可以轻松的增减表情。
+
+![Art](https://github.com/llwl1982/EmoticonsBoard/blob/master/doc/overlook.gif)
+
 # Gradle Dependency
 
 ```xml  
