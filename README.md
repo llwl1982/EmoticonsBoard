@@ -22,7 +22,9 @@ dependencies {
 }
 ```
 # Struct
+
 <img src="doc/core.jpg" width="60%"/> 
+
 
 EmoticonsBoard通过设置EmoticonPacksAdapter来展示表情。EmoticonPacksAdapter包含了一个EmoticonPack的列表，用来承载表情数据。每个EmoticonPack代表了一个表情集合。PageFactory用来创建展示表情的View，表情是以Page的形式展示的。
 通过自定义不同的PageFactory就可以以不同方式展示表情。
