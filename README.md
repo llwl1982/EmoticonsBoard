@@ -1,5 +1,7 @@
 # EmoticonsBoard
-基于XhsEmoticonsKeyboard，添加了动态更新表情包的功能。使用EmoticonPacksAdapter，可以轻松的增减表情。
+受XhsEmoticonsKeyboard的启发，重新设计了框架，添加了动态更新表情包的功能。使用EmoticonPacksAdapter，可以轻松的增减表情。
+
+新增代码使用Kotlin开发。
 
 ![Art](https://github.com/llwl1982/EmoticonsBoard/blob/master/doc/overlook.gif)
 
@@ -19,6 +21,11 @@ dependencies {
     compile 'im.ll:emoticonsboard:1.0.0'
 }
 ```
+# Struct
+<img src="doc/core.jpg"/> 
+EmoticonsBoard通过设置EmoticonPacksAdapter来展示表情。EmoticonPacksAdapter包含了一个EmoticonPack的列表，用来承载表情数据。每个EmoticonPack代表了一个表情集合。PageFactory用来创建展示表情的View，表情是以Page的形式展示的。
+通过自定义不同的PageFactory就可以以不同方式展示表情。
+
 # Samples Usage
 ## XML
 
