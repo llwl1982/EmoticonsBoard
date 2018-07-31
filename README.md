@@ -22,7 +22,7 @@ dependencies {
 }
 ```
 # Struct
-<img src="doc/screenshot.jpg" width="60%"/> 
+<img src="doc/screenshot.jpg" width="40%"/> 
 <img src="doc/core.jpg" width="60%"/> 
 
 
