@@ -226,13 +226,13 @@ public class QqEmoticonsKeyBoard extends AutoHeightLayout implements EmoticonsFu
     public void onSoftKeyboardPop(int height) {
         super.onSoftKeyboardPop(height);
         lyKvml.setVisibility(true);
-        onFuncChange(lyKvml.DEF_KEY);
+        onFuncChange(lyKvml.NONE_KEY);
     }
 
     @Override
     public void onSoftKeyboardClose() {
         super.onSoftKeyboardClose();
-        if (lyKvml.isOnlyShowSoftKeyboard()) {
+        if (lyKvml.isFuncHidden()) {
             reset();
         } else {
             onFuncChange(lyKvml.getCurrentFuncKey());

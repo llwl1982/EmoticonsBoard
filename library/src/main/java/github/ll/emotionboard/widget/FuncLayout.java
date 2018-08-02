@@ -16,11 +16,11 @@ import github.ll.emotionboard.utils.EmoticonsKeyboardUtils;
 
 public class FuncLayout extends LinearLayout {
 
-    public final int DEF_KEY = Integer.MIN_VALUE;
+    public final int NONE_KEY = Integer.MIN_VALUE;
 
     private final SparseArray<View> mFuncViewArrayMap = new SparseArray<>();
 
-    private int mCurrentFuncKey = DEF_KEY;
+    private int mCurrentFuncKey = NONE_KEY;
 
     protected int mHeight = 0;
 
@@ -44,30 +44,31 @@ public class FuncLayout extends LinearLayout {
             int keyTemp = mFuncViewArrayMap.keyAt(i);
             mFuncViewArrayMap.get(keyTemp).setVisibility(GONE);
         }
-        mCurrentFuncKey = DEF_KEY;
+
+        mCurrentFuncKey = NONE_KEY;
         setVisibility(false);
     }
 
-    public void toggleFuncView(int key, boolean isSoftKeyboardPop, EditText editText) {
+    public void toggleFuncView(int key, boolean isSoftKeyboardPopped, EditText editText) {
+
+        if (isSoftKeyboardPopped) {
+            closeSoftKeyboard(editText);
+        }
+
         if (getCurrentFuncKey() == key) {
-            if (isSoftKeyboardPop) {
-                if(EmoticonsKeyboardUtils.isFullScreen((Activity) getContext())){
-                    EmoticonsKeyboardUtils.closeSoftKeyboard(editText);
-                } else {
-                    EmoticonsKeyboardUtils.closeSoftKeyboard(getContext());
-                }
-            } else {
+            if (!isSoftKeyboardPopped) {
                 EmoticonsKeyboardUtils.openSoftKeyboard(editText);
             }
         } else {
-            if (isSoftKeyboardPop) {
-                if(EmoticonsKeyboardUtils.isFullScreen((Activity) getContext())){
-                    EmoticonsKeyboardUtils.closeSoftKeyboard(editText);
-                } else {
-                    EmoticonsKeyboardUtils.closeSoftKeyboard(getContext());
-                }
-            }
             showFuncView(key);
+        }
+    }
+
+    private void closeSoftKeyboard(EditText editText) {
+        if(EmoticonsKeyboardUtils.isFullScreen((Activity) getContext())){
+            EmoticonsKeyboardUtils.closeSoftKeyboard(editText);
+        } else {
+            EmoticonsKeyboardUtils.closeSoftKeyboard(getContext());
         }
     }
 
@@ -75,6 +76,7 @@ public class FuncLayout extends LinearLayout {
         if (mFuncViewArrayMap.get(key) == null) {
             return;
         }
+
         for (int i = 0; i < mFuncViewArrayMap.size(); i++) {
             int keyTemp = mFuncViewArrayMap.keyAt(i);
             if (keyTemp == key) {
@@ -83,6 +85,7 @@ public class FuncLayout extends LinearLayout {
                 mFuncViewArrayMap.get(keyTemp).setVisibility(GONE);
             }
         }
+
         mCurrentFuncKey = key;
         setVisibility(true);
 
@@ -99,9 +102,10 @@ public class FuncLayout extends LinearLayout {
         this.mHeight = height;
     }
 
-    public void setVisibility(boolean b) {
+    public void setVisibility(boolean isVisible) {
         LayoutParams params = (LayoutParams) getLayoutParams();
-        if (b) {
+
+        if (isVisible) {
             setVisibility(VISIBLE);
             params.height = mHeight;
             if (mListenerList != null) {
@@ -118,11 +122,12 @@ public class FuncLayout extends LinearLayout {
                 }
             }
         }
+
         setLayoutParams(params);
     }
 
-    public boolean isOnlyShowSoftKeyboard() {
-        return mCurrentFuncKey == DEF_KEY;
+    public boolean isFuncHidden() {
+        return mCurrentFuncKey == NONE_KEY;
     }
 
     private List<FuncKeyBoardListener> mListenerList;

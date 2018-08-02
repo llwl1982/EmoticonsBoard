@@ -31,7 +31,9 @@ import github.ll.emotionboard.widget.EmoticonsFuncView;
 import github.ll.emotionboard.widget.EmoticonsIndicatorView;
 import github.ll.emotionboard.widget.FuncLayout;
 
-public class EmoticonsBoard extends AutoHeightLayout implements View.OnClickListener, EmoticonsFuncView.EmoticonsFuncListener, OnToolBarItemClickListener, EmoticonsEditText.OnBackKeyClickListener, FuncLayout.OnFuncChangeListener {
+public class EmoticonsBoard extends AutoHeightLayout implements View.OnClickListener,
+        EmoticonsFuncView.EmoticonsFuncListener, OnToolBarItemClickListener,
+        EmoticonsEditText.OnBackKeyClickListener, FuncLayout.OnFuncChangeListener {
 
     public static final int FUNC_TYPE_EMOTION = -1;
     public static final int FUNC_TYPE_APPPS = -2;
@@ -213,13 +215,13 @@ public class EmoticonsBoard extends AutoHeightLayout implements View.OnClickList
     public void onSoftKeyboardPop(int height) {
         super.onSoftKeyboardPop(height);
         funcLayout.setVisibility(true);
-        onFuncChange(funcLayout.DEF_KEY);
+        onFuncChange(funcLayout.NONE_KEY);
     }
 
     @Override
     public void onSoftKeyboardClose() {
         super.onSoftKeyboardClose();
-        if (funcLayout.isOnlyShowSoftKeyboard()) {
+        if (funcLayout.isFuncHidden()) {
             reset();
         } else {
             onFuncChange(funcLayout.getCurrentFuncKey());
