@@ -15,13 +15,5 @@ interface EmoticonsIndicator {
      */
     fun playTo(position: Int, pack: EmoticonPack<*>)
 
-    /**
-     * 在表情包内移动
-     * @param startPosition 开始页
-     * @param toPosition 移动到的页面位置
-     * @param pack
-     */
-    fun playBy(startPosition: Int, toPosition: Int, pack: EmoticonPack<*>)
-
     fun notifyDataChanged()
 }

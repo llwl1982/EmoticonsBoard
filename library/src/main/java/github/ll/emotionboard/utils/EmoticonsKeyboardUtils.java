@@ -15,7 +15,7 @@ import android.widget.TextView;
 public class EmoticonsKeyboardUtils {
 
     private static final String EXTRA_DEF_KEYBOARDHEIGHT = "DEF_KEYBOARDHEIGHT";
-    private static final int DEF_KEYBOARD_HEAGH_WITH_DP = 300;
+    private static final int DEF_KEYBOARD_HEIGHT_WITH_DP = 300;
     private static int sDefKeyboardHeight = -1;
 
     private static DisplayMetrics getDisplayMetrics(Context context) {
@@ -51,7 +51,7 @@ public class EmoticonsKeyboardUtils {
 
     public static int getDefKeyboardHeight(Context context) {
         if (sDefKeyboardHeight < 0) {
-            sDefKeyboardHeight = dip2px(context, DEF_KEYBOARD_HEAGH_WITH_DP);
+            sDefKeyboardHeight = dip2px(context, DEF_KEYBOARD_HEIGHT_WITH_DP);
         }
         int height = PreferenceManager.getDefaultSharedPreferences(context).getInt(EXTRA_DEF_KEYBOARDHEIGHT, 0);
         return sDefKeyboardHeight = height > 0 && sDefKeyboardHeight != height ? height : sDefKeyboardHeight;

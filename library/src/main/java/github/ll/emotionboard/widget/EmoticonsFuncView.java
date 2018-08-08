@@ -83,25 +83,6 @@ public class EmoticonsFuncView extends ViewPager {
                     mEmoticonsFuncListener.playTo(position - start, pack);
                 }
 
-//                if (mCurrentPagePosition - start >= size) {
-//                    if (mEmoticonsFuncListener != null) {
-//                        mEmoticonsFuncListener.playTo(position - start, pack);
-//                    }
-//                }
-//
-//                else if (mCurrentPagePosition - start < 0) {
-//                    if (mEmoticonsFuncListener != null) {
-//                        mEmoticonsFuncListener.playTo(0, pack);
-//                    }
-//                }
-//
-//                // 当前表情集
-//                else {
-//                    if (mEmoticonsFuncListener != null) {
-//                        mEmoticonsFuncListener.playBy(mCurrentPagePosition - start, position - start, pack);
-//                    }
-//                }
-
                 if (mEmoticonsFuncListener != null) {
                     mEmoticonsFuncListener.onCurrentEmoticonPackChanged(pack);
                 }
@@ -133,13 +114,5 @@ public class EmoticonsFuncView extends ViewPager {
          * @param pack
          */
         void playTo(int position, EmoticonPack<? extends Emoticon> pack);
-
-        /**
-         * 在当前表情集中移动
-         * @param oldPosition 移动的开始位置
-         * @param newPosition 移动的结束为止
-         * @param pack
-         */
-        void playBy(int oldPosition, int newPosition, EmoticonPack<? extends Emoticon> pack);
     }
 }

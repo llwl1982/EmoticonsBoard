@@ -78,11 +78,6 @@ public class EmoticonsKeyBoardPopWindow extends PopupWindow implements Emoticons
     }
 
     @Override
-    public void playBy(int oldPosition, int newPosition, EmoticonPack pack) {
-        emoticonsIndicator.playBy(oldPosition, newPosition, pack);
-    }
-
-    @Override
     public void onToolBarItemClick(EmoticonPack pack) {
         emoticonsFuncView.setCurrentPageSet(pack);
     }

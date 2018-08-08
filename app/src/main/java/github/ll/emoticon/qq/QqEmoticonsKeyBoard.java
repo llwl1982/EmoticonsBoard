@@ -254,11 +254,6 @@ public class QqEmoticonsKeyBoard extends AutoHeightLayout implements EmoticonsFu
     }
 
     @Override
-    public void playBy(int oldPosition, int newPosition, EmoticonPack<?> pack) {
-        mEmoticonsIndicatorView.playBy(oldPosition, newPosition, pack);
-    }
-
-    @Override
     public void onToolBarItemClick(EmoticonPack<?> pack) {
         mEmoticonsFuncView.setCurrentPageSet(pack);
     }

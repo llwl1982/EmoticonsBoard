@@ -243,11 +243,6 @@ public class EmoticonsBoard extends AutoHeightLayout implements View.OnClickList
     }
 
     @Override
-    public void playBy(int oldPosition, int newPosition, EmoticonPack<? extends Emoticon> pack) {
-        emoticonsIndicator.playBy(oldPosition, newPosition, pack);
-    }
-
-    @Override
     public void onClick(View v) {
         int i = v.getId();
         if (i == R.id.btn_voice_or_text) {
